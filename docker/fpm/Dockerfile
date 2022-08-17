@@ -9,7 +9,7 @@ COPY . /var/www
 RUN composer install
 
 # allow php-cs-fixer to be executed
-RUN chmod +x php-cs-fixer-v3.phar
+RUN chmod a+x php-cs-fixer-v3.phar
 
 RUN chown -R www-data:www-data /var/www
 

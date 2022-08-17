@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  fpm:
+    build:
+      context: .
+      dockerfile: docker/fpm/Dockerfile
+    container_name: fpm
+    restart: always
+    tty: true
+    networks:
+      - app-network
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    container_name: web
+    restart: always
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
+
+  redis:
+    image: redis:7.0.4
+    container_name: redis
+    restart: always
+    tty: true
+    ports:
+      - "6379:6379"
+    command: redis-server --save 20 1 --loglevel warning
+    volumes:
+      - cache:/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  cache:
+    driver: local

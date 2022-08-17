@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no -- commitlint --edit "" || {
+    npx_exit_code=$?
+
+    echo 'For a guided commit message builder, use "npm run commit" instead of "git commit"'
+    echo ""
+    exit "$npx_exit_code"
+}

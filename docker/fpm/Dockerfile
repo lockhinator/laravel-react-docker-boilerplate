@@ -15,8 +15,8 @@ RUN chown -R www-data:www-data /var/www
 
 # install nodejs 16 (only built for prod run)
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-RUN npm install -g npm@8.17.0
 RUN apt install -y nodejs
+RUN npm install -g npm@8.17.0
 RUN npm install --location=global -y yarn
 
 RUN yarn

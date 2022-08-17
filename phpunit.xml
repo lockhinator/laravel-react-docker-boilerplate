@@ -16,13 +16,22 @@
         <include>
             <directory suffix=".php">./app</directory>
         </include>
+        <exclude>
+            <!--directory suffix=".php">./app/Macros</directory-->
+            <file>./app/Http/Middleware/Authenticate.php</file>
+            <file>./app/Http/Middleware/RedirectIfAuthenticated.php</file>
+            <file>./app/Http/Middleware/TrustHosts.php</file>
+            <file>./app/Providers/BroadcastServiceProvider.php</file>
+            <file>./app/Providers/RouteServiceProvider.php</file>
+            <file>./app/Actions/Fortify/UpdateUserProfileInformation.php</file>
+        </exclude>
     </coverage>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
-        <!-- <env name="DB_CONNECTION" value="sqlite"/> -->
-        <!-- <env name="DB_DATABASE" value=":memory:"/> -->
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_DATABASE" value=":memory:"/>
         <env name="MAIL_MAILER" value="array"/>
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>

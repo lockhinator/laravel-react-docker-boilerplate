@@ -17,8 +17,7 @@ jobs:
       - name: Run lint/prettier checks
         run: |
           docker-compose -f docker-compose.test.yml run --rm fpm composer fix-cs-check
-          docker-compose -f docker-compose.test.yml run --rm fpm yarn build
-          docker-compose -f docker-compose.test.yml run --rm fpm yarn prettier:check
+          docker-compose -f docker-compose.test.yml run --rm fpm node prettier:check
       - name: Generate Key
         run: |
           docker-compose -f docker-compose.test.yml run --rm fpm php artisan key:generate

@@ -15,3 +15,5 @@ yarn-error.log
 /.idea
 /.vscode
 .php-cs-fixer.cache
+yarn.lock
+package-lock.json

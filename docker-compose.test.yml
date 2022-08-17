@@ -8,8 +8,6 @@ services:
     container_name: fpm
     restart: always
     tty: true
-    volumes:
-      - .:/var/www
     networks:
       - app-network
 

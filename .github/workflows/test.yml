@@ -12,6 +12,7 @@ jobs:
         run: cp .env.example .env
       - name: Build containers
         run: |
+          chmod a+x php-cs-fixer-v3.phar
           docker-compose -f docker-compose.test.yml build fpm
           docker-compose -f docker-compose.test.yml up -d redis
       - name: Run lint/prettier checks

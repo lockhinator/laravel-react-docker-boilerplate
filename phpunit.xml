@@ -23,14 +23,14 @@
             <file>./app/Http/Middleware/TrustHosts.php</file>
             <file>./app/Providers/BroadcastServiceProvider.php</file>
             <file>./app/Providers/RouteServiceProvider.php</file>
-            <file>./app/Controllers/Auth/AuthenticatedSessionController.php</file>
-            <file>./app/Controllers/Auth/ConfirmablePasswordController.php</file>
-            <file>./app/Controllers/Auth/EmailVerificationNotificationController.php</file>
-            <file>./app/Controllers/Auth/EmailVerificationPromptController.php</file>
-            <file>./app/Controllers/Auth/NewPasswordController.php</file>
-            <file>./app/Controllers/Auth/PasswordResetLinkController.php</file>
-            <file>./app/Controllers/Auth/VerifyEmailController.php</file>
-            <file>./app/Requests/Auth/LoginRequest.php</file>
+            <file>./app/Http/Controllers/Auth/AuthenticatedSessionController.php</file>
+            <file>./app/Http/Controllers/Auth/ConfirmablePasswordController.php</file>
+            <file>./app/Http/Controllers/Auth/EmailVerificationNotificationController.php</file>
+            <file>./app/Http/Controllers/Auth/EmailVerificationPromptController.php</file>
+            <file>./app/Http/Controllers/Auth/NewPasswordController.php</file>
+            <file>./app/Http/Controllers/Auth/PasswordResetLinkController.php</file>
+            <file>./app/Http/Controllers/Auth/VerifyEmailController.php</file>
+            <file>./app/Http/Requests/Auth/LoginRequest.php</file>
         </exclude>
     </coverage>
     <php>

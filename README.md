@@ -1,13 +1,11 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://github.com/lockhinator/laravel-react-docker-boilerplate/actions?query=branch%3Amain++"><img src="https://img.shields.io/github/workflow/status/lockhinator/laravel-react-docker-boilerplate/tests/main" alt="Build Status"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Laravel React Boilerplate
+## Laravel - React - Docker - Boilerplate
 
 This repo is built with the following:
 - Laravel 9
@@ -17,6 +15,10 @@ This repo is built with the following:
 - TypeScript 4.7
 - Husky/Commit lint
 - PHP CS Fixer v3
+
+I put together this repo in an effort to have a solid starting place to begin a React/Docker/Laravel project from. 
+While I understand monolithic repos may not be everyone's bread and butter, it makes sense for a good number of my projects.
+If you find any bugs or see anything that needs to be changed/updated feel free to put up a PR!
 
 ## Get started
 

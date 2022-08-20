@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface LabelInterface {
+export interface LabelInterface {
     forInput: string,
     value?: string,
     className?: string,

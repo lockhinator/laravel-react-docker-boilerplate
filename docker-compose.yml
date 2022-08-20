@@ -41,6 +41,10 @@ services:
     ports:
       - "5173:5173"
     volumes:
+      # the node container only needs access to these resources
+      # this is also only in the event you are updating these resources
+      - ./public:/var/www/public
+      - ./vite.config.js:/var/www/vite.config.js
       - ./resources:/var/www/resources
       - ./package.json:/var/www/package.json
     networks:

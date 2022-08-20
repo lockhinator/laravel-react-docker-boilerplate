@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, MutableRefObject } from 'react';
 
-interface InputInterface {
+export interface InputInterface {
     type?: string
     name: string,
-    value: string,
+    value?: string,
     className: string,
     autoComplete?: string,
     required?: boolean,
@@ -23,6 +23,7 @@ export const Input = ({type = 'text', required = false, autoComplete = '', isFoc
     return (
         <div className="flex flex-col items-start">
             <input
+                data-testid="test-input"
                 type={type}
                 name={props.name}
                 value={props.value}
@@ -33,7 +34,7 @@ export const Input = ({type = 'text', required = false, autoComplete = '', isFoc
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}
-                onChange={(e) => props.handleChange(e)}
+                onChange={props.handleChange}
             />
         </div>
     );

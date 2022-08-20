@@ -56,6 +56,18 @@ You can run tests/linters for both React and Laravel/PHP independently. These ar
    1. `docker-compose run --rm fpm composer fix-cs-check`
    2. `docker-compose run --rm fpm composer fix-cs`
 
+## Committing changes
+
+In order to keep commits looking good this repository uses commitlint in conjunction with husky. 
+
+Because of this the commit process ends up being:
+- Create your branch
+- Make changes to the code base
+- Add your changes via `git add`
+- Commit your changes using `yarn commit`
+  - Fill out the interactive prompts
+- Push your changes to your branch
+  - `git push`
 
 ## License
 

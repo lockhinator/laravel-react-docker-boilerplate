@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from '@inertiajs/inertia-react';
 
-interface ResponsiveNavLinkInterface {
+export interface ResponsiveNavLinkInterface {
     method?: string,
     as?: string,
     href: string,
     active?: boolean,
-    children?: JSX.Element,
+    children?: JSX.Element | JSX.Element[] | string,
 }
 
 export const ResponsiveNavLink = ({ method = 'get', as = 'a', active = false, ...props }: ResponsiveNavLinkInterface): JSX.Element => (

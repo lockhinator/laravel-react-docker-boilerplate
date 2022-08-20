@@ -11,7 +11,7 @@ type DropdownContextType = {
 let DropDownContext;
 
 interface DropdownCommonInterface {
-    children?: JSX.Element
+    children?: JSX.Element | JSX.Element[] | string
 }
 
 const Dropdown = (props: DropdownCommonInterface): JSX.Element => {

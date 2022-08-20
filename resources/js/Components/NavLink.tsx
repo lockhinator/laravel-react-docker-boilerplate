@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from '@inertiajs/inertia-react';
 
-interface NavLinkInterface {
+export interface NavLinkInterface {
     href: string,
     active: boolean,
-    children?: JSX.Element,
+    children?: JSX.Element | string,
 }
 
 export const NavLink = ({ href, active, children }: NavLinkInterface): JSX.Element => (

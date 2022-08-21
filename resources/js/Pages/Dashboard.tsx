@@ -1,9 +1,10 @@
-import React, { JSX } from 'react';
+import React from 'react';
 import Authenticated from '../Layouts/Authenticated';
 import { Head } from '@inertiajs/inertia-react';
+import { AuthUserInterface } from "../Interfaces/AuthUserInterface";
 
 interface DashboardInterface {
-    auth: object,
+    auth: AuthUserInterface,
     errors?: string[],
 }
 

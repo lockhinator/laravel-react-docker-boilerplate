@@ -29,17 +29,27 @@ If you find any bugs or see anything that needs to be changed/updated feel free 
    1. `cd laravel-react-docker-boilerplate`
 4. Copy the `.env.example` to `.env`
    1. `cp .env.example .env`
-5. Run the following commands to run the repo in docker
+5. Update your `.env` to reflect the database you want to connect to. If using the default `docker-compose.yml` then you can copy the blow and paste it over the initial values.
+   1. ```dotenv
+          DB_CONNECTION=pgsql
+          DB_HOST=pgsql
+          DB_PORT=5432
+          DB_DATABASE=laravel
+          DB_USERNAME=localuser
+          DB_PASSWORD=supersecretpassword
+      ```
+6. Run the following commands to run the repo in docker
    1. `docker-compose build fpm node web`
    2. `docker-compose run --rm fpm php artisan key generate`
-   3. `docker-compose run --rm fpm composer install`
-   4. `docker-compose run --rm node yarn`
-   5. `docker-compose up -d`
-6. Start making changes to the boiler plate
+   3. `docker-compose run --rm fpm php artisan migrate`
+   4. `docker-compose run --rm fpm composer install`
+   5. `docker-compose run --rm node yarn`
+   6. `docker-compose up -d`
+7. Start making changes to the boiler plate
 
 ## Usage
 
-Linters and test suites are available for the boilerplate. You are free to change the configs to your liking.
+Linters and test suites are available for the boilerplate. You are free to change the configs how you want.
 
 ### Running tests/linters
 

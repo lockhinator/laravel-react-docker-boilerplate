@@ -25,7 +25,10 @@ export default function Register(): JSX.Element {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('register'));
+        post(route('register'), {
+            preserveScroll: true,
+            onSuccess: () => reset('password', 'password_confirmation'),
+        });
     };
 
     return (
@@ -102,9 +105,7 @@ export default function Register(): JSX.Element {
                         Already registered?
                     </Link>
 
-                    <Button className="ml-4"
-                            processing={processing}
-                            onClickHandler={() => reset('password', 'password_confirmation')}>
+                    <Button className="ml-4" processing={processing}>
                         Register
                     </Button>
                 </div>

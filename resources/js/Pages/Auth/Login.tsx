@@ -28,7 +28,9 @@ export default function Login({ status, canResetPassword }: LoginInterface): JSX
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('login'));
+        post(route('login'), {
+            onSuccess: () => reset('password')
+        });
     };
 
     return (
@@ -87,7 +89,7 @@ export default function Login({ status, canResetPassword }: LoginInterface): JSX
                         </Link>
                     )}
 
-                    <Button className="ml-4" processing={processing} onClickHandler={() => reset('password')}>
+                    <Button className="ml-4" processing={processing}>
                         Log in
                     </Button>
                 </div>

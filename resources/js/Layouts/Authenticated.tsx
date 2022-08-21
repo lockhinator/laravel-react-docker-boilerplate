@@ -9,8 +9,8 @@ import route from '../../../vendor/tightenco/ziggy';
 
 interface AuthenticatedInterface {
     auth: AuthUserInterface,
-    header?: string,
-    children?: JSX.Element,
+    header?: string | JSX.Element,
+    children?: JSX.Element[],
 }
 
 export default function Authenticated({ auth, header, children }: AuthenticatedInterface): JSX.Element {

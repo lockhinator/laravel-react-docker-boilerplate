@@ -79,6 +79,10 @@ Because of this the commit process ends up being:
 - Push your changes to your branch
   - `git push`
 
+## Todo
+
+- [ ] Configure Jest code coverage to run correctly (currently not working)
+
 ## License
 
 This boilerplate is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

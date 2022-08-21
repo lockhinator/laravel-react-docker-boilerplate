@@ -9,6 +9,8 @@ RUN pecl install redis && \
 RUN pecl install xdebug && \
     docker-php-ext-enable xdebug
 
+RUN echo "xdebug.mode=develop,debug,coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
 RUN docker-php-ext-install pdo_pgsql mbstring zip exif pcntl
 
 RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \

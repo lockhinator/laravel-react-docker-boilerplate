@@ -13,6 +13,7 @@ COPY docker/nginx/site.conf /etc/nginx/conf.d/default.conf
 # install nodejs 16 (only built for prod run)
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt install -y nodejs
+RUN npm install -g npm@8.18.0
 RUN npm install --location=global -y yarn
 
 RUN yarn

@@ -21,6 +21,8 @@ jobs:
         run: |
           docker-compose -f docker-compose.test.yml run --rm fpm composer fix-cs-check
           docker-compose -f docker-compose.test.yml run --rm fpm yarn prettier:check
+      - name: Run Jest Tests
+        run: |
           docker-compose -f docker-compose.test.yml run --rm fpm yarn test
       - name: Generate Key
         run: |

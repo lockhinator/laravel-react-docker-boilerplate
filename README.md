@@ -85,7 +85,8 @@ Because of this the commit process ends up being:
 
 ## Todo
 
-- [ ] Configure Jest code coverage to run correctly (currently not working)
+- [x] Configure Jest code coverage to run correctly (currently not working)
+- [ ] Fill out the jest tests more to cover the different default Laravel Auth pages
 
 ## License
 

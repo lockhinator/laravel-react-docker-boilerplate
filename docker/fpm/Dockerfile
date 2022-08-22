@@ -1,4 +1,4 @@
-FROM cameeob2003/laravel-fpm:latest
+FROM cameeob2003/php-8.1-fpm-laravel-base:latest
 
 WORKDIR /var/www
 
@@ -13,11 +13,7 @@ RUN chmod a+x php-cs-fixer-v3.phar
 
 RUN chown -R www-data:www-data /var/www
 
-# install nodejs 16 (only built for prod run)
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-RUN apt install -y nodejs
-RUN npm install -g npm@8.17.0
-RUN npm install --location=global -y yarn
-
 RUN yarn
 RUN yarn build
+
+RUN rm -rf /var/www/node_modules

@@ -15,6 +15,9 @@ This repo is built with the following:
 - TypeScript 4.7
 - Husky/Commit lint
 - PHP CS Fixer v3
+- Redis 7
+- Postgres 14.4
+- Nginx 1.23
 
 I put together this repo in an effort to have a solid starting place to begin a React/Docker/Laravel project from. 
 While I understand monolithic repos may not be everyone's bread and butter, it makes sense for a good number of my projects.

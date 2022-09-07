@@ -15,6 +15,9 @@ This repo is built with the following:
 - TypeScript 4.7
 - Husky/Commit lint
 - PHP CS Fixer v3
+- Redis 7
+- Postgres 14.4
+- Nginx 1.23
 
 I put together this repo in an effort to have a solid starting place to begin a React/Docker/Laravel project from. 
 While I understand monolithic repos may not be everyone's bread and butter, it makes sense for a good number of my projects.
@@ -66,6 +69,10 @@ You can run tests/linters for both React and Laravel/PHP independently. These ar
    1. `docker-compose run --rm fpm composer fix-cs-check`
    2. `docker-compose run --rm fpm composer fix-cs`
 
+The Jest configuration is defined in the `package.json` file under the `jest` key.
+The reason for this is that using `jest.config.ts` results in coverage not correctly running and no files will be found.
+If you want to make changes to the Jest configuration then do it in the `package.json` or risk not having coverage run correctly.
+
 ## Committing changes
 
 In order to keep commits looking good this repository uses commitlint in conjunction with husky. 
@@ -81,7 +88,8 @@ Because of this the commit process ends up being:
 
 ## Todo
 
-- [ ] Configure Jest code coverage to run correctly (currently not working)
+- [x] Configure Jest code coverage to run correctly (currently not working)
+- [ ] Fill out the jest tests more to cover the different default Laravel Auth pages
 
 ## License
 

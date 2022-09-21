@@ -28,6 +28,23 @@ services:
     networks:
       - app-network
 
+  websockets:
+    build:
+      context: .
+      dockerfile: docker/fpm/Dockerfile
+    container_name: websockets
+    command: php artisan websockets:serve
+    restart: always
+    tty: true
+    env_file:
+      - .env
+    ports:
+      - "6001:6001"
+    volumes:
+      - .:/var/www
+    networks:
+      - app-network
+
   node:
     build:
       context: .
@@ -40,6 +57,8 @@ services:
       - 'host.docker.internal:host-gateway'
     ports:
       - "5173:5173"
+    env_file:
+      - .env
     volumes:
       # the node container only needs access to these resources
       # this is also only in the event you are updating these resources
@@ -47,6 +66,7 @@ services:
       - ./vite.config.js:/var/www/vite.config.js
       - ./resources:/var/www/resources
       - ./package.json:/var/www/package.json
+      - node_modules:/var/www/node_modules
     networks:
       - app-network
 

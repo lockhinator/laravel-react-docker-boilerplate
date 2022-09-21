@@ -17,6 +17,8 @@
         }
     },
     "dependencies": {
+        "laravel-echo": "^1.14.0",
+        "pusher-js": "^7.4.0",
         "react-app-polyfill": "^3.0.0"
     },
     "peerDependencies": {

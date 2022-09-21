@@ -62,7 +62,16 @@ would.
    4. `docker-compose run --rm fpm composer install`
    5. `docker-compose run --rm node yarn`
    6. `docker-compose up -d`
-7. Start making changes to the boiler plate
+7. Visit [http://localhost](http://localhost) and make sure the app is running 
+8. Start making building your app!
+
+## Quick links
+With the addition of Laravel Horizon and Laravel Websockets there are a few new endpoints that you may want to access to
+observe/manage your application in your local development environment. These endpoints are:
+- [http://localhost/laravel-websockets](http://localhost/laravel-websockets) which allows you to view all websocket communication
+  (broadcast events) going through your development environment
+- [http://localhost/horizon](http://localhost/horizon) which allows you to view the current queue within your development
+  environment.
 
 ## Usage
 

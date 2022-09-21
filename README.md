@@ -110,8 +110,6 @@ Because of this the commit process ends up being:
   - `git push`
 
 ## Todo
-
-- [x] Configure Jest code coverage to run correctly (currently not working)
 - [ ] Fill out the jest tests more to cover the different default Laravel Auth pages
 
 ## License

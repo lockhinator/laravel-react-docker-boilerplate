@@ -6,6 +6,8 @@ import { ResponsiveNavLink } from '../Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
 import { AuthUserInterface } from '../Interfaces/AuthUserInterface';
 import route from '../../../vendor/tightenco/ziggy';
+import { SocketContext } from '../Contexts/Socket';
+import { echo } from '../Echo';
 
 interface AuthenticatedInterface {
     auth: AuthUserInterface,
@@ -125,7 +127,9 @@ export default function Authenticated({ auth, header, children }: AuthenticatedI
                 </header>
             )}
 
-            <main>{children}</main>
+            <SocketContext.Provider value={echo}>
+                <main>{children}</main>
+            </SocketContext.Provider>
         </div>
     );
 }

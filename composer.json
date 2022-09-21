@@ -10,6 +10,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.5.4",
         "laravel/framework": "^9.19",
+        "laravel/horizon": "^5.10",
         "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.7",
         "tightenco/ziggy": "^1.0"

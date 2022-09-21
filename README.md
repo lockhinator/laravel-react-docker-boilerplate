@@ -9,6 +9,8 @@
 
 This repo is built with the following:
 - Laravel 9
+- Laravel Websockets
+- Laravel Horizon
 - React 17
 - Vite 3
 - ESLint 8
@@ -22,6 +24,18 @@ This repo is built with the following:
 I put together this repo in an effort to have a solid starting place to begin a React/Docker/Laravel project from. 
 While I understand monolithic repos may not be everyone's bread and butter, it makes sense for a good number of my projects.
 If you find any bugs or see anything that needs to be changed/updated feel free to put up a PR!
+
+A few things to note. 
+
+- Websockets are ready to use out of the box for development. They are not configured for production however so you will
+need to handle the production config/setup based on your needs. If working with Cloudflare you will need to change the
+port that the sockets run on as well.
+- The `php artisan schedule:work`, `php artisan websocket:serve` and `php artisan horizon` commands all run from within 
+their own containers. If you make changes that impacts these processes you will need to restart the containers using 
+`docker-compose restart <container-name(s)>`
+- I would discourage using the container based Postgres and Redis services in production. While its great for development, 
+a managed service is going to take less resources from your all and serve you far better than these stock implementations
+would.
 
 ## Get started
 

@@ -13,6 +13,32 @@ services:
     networks:
       - app-network
 
+  worker:
+    build:
+      context: .
+      dockerfile: docker/fpm/Dockerfile
+    container_name: worker
+    command: php artisan horizon
+    restart: always
+    tty: true
+    volumes:
+      - .:/var/www
+    networks:
+      - app-network
+
+  schedule:
+    build:
+      context: .
+      dockerfile: docker/fpm/Dockerfile
+    container_name: schedule
+    command: php artisan schedule:work
+    restart: always
+    tty: true
+    volumes:
+      - .:/var/www
+    networks:
+      - app-network
+
   web:
     build:
       context: .

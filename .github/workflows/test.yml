@@ -13,20 +13,20 @@ jobs:
       - name: Build containers
         run: |
           chmod a+x php-cs-fixer-v3.phar
-          docker-compose -f docker-compose.test.yml build fpm
-          docker-compose -f docker-compose.test.yml run --rm fpm composer install
-          docker-compose -f docker-compose.test.yml run --rm fpm yarn
-          docker-compose -f docker-compose.test.yml run --rm fpm yarn build
+          docker-compose build fpm
+          docker-compose run --rm fpm composer install
+          docker-compose run --rm node yarn
+          docker-compose run --rm node yarn build
       - name: Run lint/prettier checks
         run: |
-          docker-compose -f docker-compose.test.yml run --rm fpm composer fix-cs-check
-          docker-compose -f docker-compose.test.yml run --rm fpm yarn prettier:check
+          docker-compose run --rm fpm composer fix-cs-check
+          docker-compose run --rm fpm yarn prettier:check
       - name: Run Jest Tests
         run: |
-          docker-compose -f docker-compose.test.yml run --rm fpm yarn test
+          docker-compose run --rm node yarn test
       - name: Generate Key
         run: |
-          docker-compose -f docker-compose.test.yml run --rm fpm php artisan key:generate
+          docker-compose run --rm fpm php artisan key:generate
       - name: Run PHPUnit Tests
         run: |
-          docker-compose -f docker-compose.test.yml run --rm fpm php artisan test --coverage --min=85
+          docker-compose run --rm fpm php artisan test --coverage --min=85

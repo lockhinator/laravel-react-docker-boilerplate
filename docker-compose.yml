@@ -1,10 +1,11 @@
-version: '3'
+version: '3.8'
 
 services:
   fpm:
     build:
       context: .
-      dockerfile: docker/fpm/Dockerfile
+      dockerfile: docker/Dockerfile
+      target: fpm-dev
     container_name: fpm
     restart: always
     tty: true
@@ -16,7 +17,8 @@ services:
   worker:
     build:
       context: .
-      dockerfile: docker/fpm/Dockerfile
+      dockerfile: docker/Dockerfile
+      target: fpm-dev
     container_name: worker
     command: php artisan horizon
     restart: always
@@ -29,7 +31,8 @@ services:
   schedule:
     build:
       context: .
-      dockerfile: docker/fpm/Dockerfile
+      dockerfile: docker/Dockerfile
+      target: fpm-dev
     container_name: schedule
     command: php artisan schedule:work
     restart: always
@@ -42,7 +45,8 @@ services:
   web:
     build:
       context: .
-      dockerfile: docker/nginx/Dockerfile
+      dockerfile: docker/Dockerfile
+      target: nginx
     container_name: web
     restart: always
     tty: true
@@ -57,13 +61,12 @@ services:
   websockets:
     build:
       context: .
-      dockerfile: docker/fpm/Dockerfile
+      dockerfile: docker/Dockerfile
+      target: fpm-dev
     container_name: websockets
     command: php artisan websockets:serve
     restart: always
     tty: true
-    env_file:
-      - .env
     ports:
       - "6001:6001"
     volumes:
@@ -74,7 +77,8 @@ services:
   node:
     build:
       context: .
-      dockerfile: docker/node/Dockerfile
+      dockerfile: docker/Dockerfile
+      target: node
     container_name: node
     command: yarn dev
     restart: always
@@ -83,11 +87,10 @@ services:
       - 'host.docker.internal:host-gateway'
     ports:
       - "5173:5173"
-    env_file:
-      - .env
     volumes:
       # the node container only needs access to these resources
       # this is also only in the event you are updating these resources
+      - .env:/var/www/.env
       - ./public:/var/www/public
       - ./vite.config.js:/var/www/vite.config.js
       - ./resources:/var/www/resources

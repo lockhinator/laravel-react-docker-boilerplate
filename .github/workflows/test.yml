@@ -19,7 +19,6 @@ jobs:
           docker-compose run --rm node yarn build
       - name: Run lint/prettier checks
         run: |
-          docker-compose run --rm fpm composer fix-cs-check
           docker-compose run --rm node yarn prettier:check
       - name: Run Jest Tests
         run: |

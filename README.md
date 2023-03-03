@@ -8,7 +8,8 @@
 ## Laravel - React - Docker - Boilerplate
 
 This repo is built with the following:
-- Laravel 9
+- PHP 8.2.3
+- Laravel 10
 - Laravel Websockets
 - Laravel Horizon
 - React 17
@@ -16,7 +17,6 @@ This repo is built with the following:
 - ESLint 8
 - TypeScript 4.7
 - Husky/Commit lint
-- PHP CS Fixer v3
 - Redis 7
 - Postgres 14.4
 - Nginx 1.23
@@ -57,7 +57,7 @@ would.
       ```
 6. Run the following commands to run the repo in docker
    1. `docker-compose build fpm node web`
-   2. `docker-compose run --rm fpm php artisan key generate`
+   2. `docker-compose run --rm fpm php artisan key:generate`
    3. `docker-compose run --rm fpm php artisan migrate`
    4. `docker-compose run --rm fpm composer install`
    5. `docker-compose run --rm node yarn`

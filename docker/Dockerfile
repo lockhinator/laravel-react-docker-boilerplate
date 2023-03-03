@@ -1,7 +1,7 @@
 ########################################################################################################################
 # fpm-base - this can be used in prod builds
 ########################################################################################################################
-FROM php:8.1-fpm-buster as fpm-base
+FROM php:8.2-fpm-buster as fpm-base
 
 RUN apt-get update && apt-get install -y build-essential libpng-dev libodb-pgsql-dev libpq-dev libzip-dev \
     libonig-dev libjpeg62-turbo-dev libfreetype6-dev locales zip jpegoptim optipng pngquant gifsicle vim unzip git curl
@@ -50,7 +50,7 @@ RUN chmod a+x php-cs-fixer-v3.phar
 ########################################################################################################################
 FROM fpm-base as node
 # install nodejs 16 (only built for prod run)
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt install -y nodejs
 RUN npm install --location=global npm@8.19.2
 RUN npm install --location=global -y yarn

@@ -50,7 +50,7 @@ FROM fpm-base as node
 # install nodejs 16 (only built for prod run)
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt install -y nodejs
-RUN npm install --location=global npm@8.19.2
+RUN npm install --location=global npm@9.6.0
 RUN npm install --location=global -y yarn
 RUN yarn
 RUN yarn build

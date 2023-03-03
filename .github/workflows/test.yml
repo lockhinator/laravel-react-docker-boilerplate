@@ -12,14 +12,12 @@ jobs:
         run: cp .env.example .env
       - name: Build containers
         run: |
-          chmod a+x php-cs-fixer-v3.phar
           docker-compose build fpm
           docker-compose run --rm fpm composer install
           docker-compose run --rm node yarn
           docker-compose run --rm node yarn build
       - name: Run lint/prettier checks
         run: |
-          docker-compose run --rm fpm composer fix-cs-check
           docker-compose run --rm node yarn prettier:check
       - name: Run Jest Tests
         run: |

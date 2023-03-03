@@ -42,8 +42,6 @@ RUN pecl install xdebug && \
 RUN echo "xdebug.mode=develop,debug,coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 # install composer development dependancies
 RUN composer install --dev
-# allow php-cs-fixer to be executed
-RUN chmod a+x php-cs-fixer-v3.phar
 
 ########################################################################################################################
 # node build

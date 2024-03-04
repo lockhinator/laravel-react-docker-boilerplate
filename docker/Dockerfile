@@ -24,6 +24,8 @@ WORKDIR /var/www
 # Copy existing application directory contents
 COPY . /var/www
 RUN chown -R www-data:www-data /var/www
+# Set 775 Permissions
+RUN chmod -R 775 /var/www/storage
 
 # Install all production composer deps
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

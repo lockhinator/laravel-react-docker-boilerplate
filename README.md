@@ -57,9 +57,9 @@ would.
       ```
 6. Run the following commands to run the repo in docker
    1. `docker-compose build fpm node web`
-   2. `docker-compose run --rm fpm php artisan key:generate`
-   3. `docker-compose run --rm fpm php artisan migrate`
-   4. `docker-compose run --rm fpm composer install`
+   2. `docker-compose run --rm fpm composer install`
+   3. `docker-compose run --rm fpm php artisan key:generate`
+   4. `docker-compose run --rm fpm php artisan migrate` 
    5. `docker-compose run --rm node yarn`
    6. `docker-compose up -d`
 7. Visit [http://localhost](http://localhost) and make sure the app is running 
